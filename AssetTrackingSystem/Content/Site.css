@@ -1,0 +1,40 @@
+﻿
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+.navbar-brand > img {
+    display: block;
+    border: 2px solid #aaa;
+    box-shadow: 2px 2px 4px #000;
+}
+
+@media (min-width: 768px) {
+    .side-nav {
+        top: 100px;
+    }
+    .navbar-right {
+        float: right !important;
+        margin-right: 0px;
+    }
+}
