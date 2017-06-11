@@ -110,6 +110,8 @@
     <Compile Include="Branch.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="GeneralCategory.cs" />
+    <Compile Include="Interfaces\ICommonRepository.cs" />
+    <Compile Include="Interfaces\IManager.cs" />
     <Compile Include="Manufacturer.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Organization.cs" />
@@ -120,7 +122,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Start\" />
+    <Folder Include="Database\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using POS.Models;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -36,5 +37,12 @@ namespace IdentitySample.Models
         {
             return new ApplicationDbContext();
         }
+        public DbSet<Organization> Organization { get; set; }
+        public DbSet<Branch> Branch { get; set; }
+        public DbSet<AssetLocation> AssetLocation { get; set; }
+        public DbSet<GeneralCategory> GeneralCategory { get; set; }
+        public DbSet<Category> Category { get; set; }
+        public DbSet<Manufacturer> Manufacturer { get; set; }
+        public DbSet<Model> Model { get; set; }
     }
 }

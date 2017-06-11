@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace POS.Models
 {
-    class Category
+    public class Category
     {
         public long Id { get; set; }
         public string Name { get; set; }

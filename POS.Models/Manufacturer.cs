@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace POS.Models
 {
-    class Manufacturer
+    public class Manufacturer
     {
         public long Id { get; set; }
         public string Name { get; set; }
