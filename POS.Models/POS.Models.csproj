@@ -106,6 +106,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssetLocation.cs" />
+    <Compile Include="Branch.cs" />
+    <Compile Include="Category.cs" />
+    <Compile Include="GeneralCategory.cs" />
+    <Compile Include="Manufacturer.cs" />
+    <Compile Include="Model.cs" />
+    <Compile Include="Organization.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
