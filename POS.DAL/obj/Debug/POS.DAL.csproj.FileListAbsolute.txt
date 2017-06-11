@@ -1,0 +1,13 @@
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.DAL\bin\Debug\POS.DAL.dll.config
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.DAL\bin\Debug\POS.DAL.dll
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.DAL\bin\Debug\POS.DAL.pdb
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.DAL\bin\Debug\POS.Models.dll
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.DAL\bin\Debug\POS.Models.pdb
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.DAL\bin\Debug\POS.Models.dll.config
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.DAL\obj\Debug\POS.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.DAL\obj\Debug\POS.DAL.dll
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.DAL\obj\Debug\POS.DAL.pdb

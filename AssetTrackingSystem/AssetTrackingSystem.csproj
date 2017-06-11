@@ -345,6 +345,16 @@
   <ItemGroup>
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\POS.BLL\POS.BLL.csproj">
+      <Project>{071e6622-ffcf-4475-9083-4c3d130f5b49}</Project>
+      <Name>POS.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POS.Models\POS.Models.csproj">
+      <Project>{e553c829-f035-436c-9036-e07995268c90}</Project>
+      <Name>POS.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
