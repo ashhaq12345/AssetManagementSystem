@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace POS.Models.Interfaces
 {
-    class IGeneralCategoryRepository
+    public interface IGeneralCategoryRepository: ICommonRepository<GeneralCategory>
     {
     }
 }

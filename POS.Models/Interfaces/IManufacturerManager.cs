@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace POS.Models.Interfaces
 {
-    interface IManufacturerManager
+    public interface IManufacturerManager: IManager<Manufacturer>
     {
     }
 }

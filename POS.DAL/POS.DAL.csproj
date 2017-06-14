@@ -47,7 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssetLocationRepository.cs" />
+    <Compile Include="BranchRepository.cs" />
+    <Compile Include="CategoryRepository.cs" />
     <Compile Include="CommonRepository.cs" />
+    <Compile Include="GeneralCategoryRepository.cs" />
+    <Compile Include="ManufacturerRepository.cs" />
+    <Compile Include="ModelRepository.cs" />
     <Compile Include="OrganizationRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

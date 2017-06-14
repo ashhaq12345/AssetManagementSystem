@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace POS.Models.Interfaces
 {
-    interface IAssetLocationRepository
+    public interface IAssetLocationRepository: ICommonRepository<AssetLocation>
     {
     }
 }

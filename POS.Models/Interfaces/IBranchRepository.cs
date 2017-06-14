@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace POS.Models.Interfaces
 {
-    interface IBranchRepository: ICommonRepository<Branch>
+    public interface IBranchRepository: ICommonRepository<Branch>
     {
 
     }
