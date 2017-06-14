@@ -20,5 +20,12 @@ namespace POS.DAL
         {
 
         }
+
+        private POSDbContext _db = new POSDbContext();
+
+        public List<GeneralCategory> GetGeneralCategory()
+        {
+            return _db.GeneralCategory.ToList();
+        }
     }
 }

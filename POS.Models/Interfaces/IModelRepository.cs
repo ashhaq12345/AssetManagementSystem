@@ -8,5 +8,7 @@ namespace POS.Models.Interfaces
 {
     public interface IModelRepository: ICommonRepository<Model>
     {
+        List<Category> GetCategories();
+        List<Manufacturer> GetManufacturer();
     }
 }

@@ -20,6 +20,6 @@ namespace POS.Models
         public long BranchId { get; set; }
 
         [ForeignKey("BranchId")]
-        public Branch Branch { get; set; }
+        public virtual Branch Branch { get; set; }
     }
 }

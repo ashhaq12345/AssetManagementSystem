@@ -8,5 +8,6 @@ namespace POS.Models.Interfaces
 {
     public interface IAssetLocationRepository: ICommonRepository<AssetLocation>
     {
+        List<Branch> GetBranchCategory();
     }
 }

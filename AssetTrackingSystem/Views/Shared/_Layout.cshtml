@@ -70,13 +70,16 @@
                     </li>
                 </ul>-->
                 <ul class="nav navbar-nav side-nav">
-                    <li class="active">
-                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-                    </li>
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Organization", "Index", "Organizations")</li>
+                    <li>@Html.ActionLink("Branch", "Index", "Branch")</li>
+                    <li>@Html.ActionLink("Asset Location", "Index", "AssetLocation")</li>
+                    <li>@Html.ActionLink("General Category", "Index", "GeneralCategory")</li>
+                    <li>@Html.ActionLink("Category", "Index", "Category")</li>
+                    <li>@Html.ActionLink("Manufacturer", "Index", "Manufacturers")</li>
+                    <li>@Html.ActionLink("Model", "Index", "Model")</li>
 
                     @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                     {

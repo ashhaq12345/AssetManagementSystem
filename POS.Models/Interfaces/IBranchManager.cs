@@ -8,5 +8,6 @@ namespace POS.Models.Interfaces
 {
     public interface IBranchManager: IManager<Branch>
     {
+        List<Organization> GetOrganizationCategories();
     }
 }

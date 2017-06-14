@@ -24,7 +24,7 @@ namespace POS.Models
         public long OrganizationId { get; set; }
 
         [ForeignKey("OrganizationId")]
-        public Organization Organization { get; set; }
+        public virtual Organization Organization { get; set; }
 
         public List<AssetLocation> AssetLocations { get; set; }
     }

@@ -62,5 +62,10 @@ namespace POS.BLL
         {
             throw new NotImplementedException();
         }
+
+        public List<Branch> GetBranchCategory()
+        {
+            return _repository.GetBranchCategory();
+        }
     }
 }

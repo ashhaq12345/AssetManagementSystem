@@ -8,18 +8,25 @@ using System.Web;
 using System.Web.Mvc;
 using POS.Models;
 using POS.Models.Database;
+using POS.Models.Interfaces;
+using POS.BLL;
 
 namespace AssetTrackingSystem.Controllers
 {
     public class AssetLocationController : Controller
     {
-        private POSDbContext db = new POSDbContext();
+        private IAssetLocationManager _assetLocationManager;
+
+        public AssetLocationController()
+        {
+            _assetLocationManager = new AssetLocationManager();
+        }
 
         // GET: AssetLocation
         public ActionResult Index()
         {
-            var assetLocation = db.AssetLocation.Include(a => a.Branch);
-            return View(assetLocation.ToList());
+            var assetLocations = _assetLocationManager.GetAll();
+            return View(assetLocations.ToList());
         }
 
         // GET: AssetLocation/Details/5
@@ -29,7 +36,7 @@ namespace AssetTrackingSystem.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AssetLocation assetLocation = db.AssetLocation.Find(id);
+            AssetLocation assetLocation = _assetLocationManager.GetById((long)id);
             if (assetLocation == null)
             {
                 return HttpNotFound();
@@ -40,7 +47,7 @@ namespace AssetTrackingSystem.Controllers
         // GET: AssetLocation/Create
         public ActionResult Create()
         {
-            ViewBag.BranchId = new SelectList(db.Branch, "Id", "Name");
+            ViewBag.BranchId = new SelectList(_assetLocationManager.GetBranchCategory(), "Id", "Name");
             return View();
         }
 
@@ -53,12 +60,11 @@ namespace AssetTrackingSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.AssetLocation.Add(assetLocation);
-                db.SaveChanges();
+                _assetLocationManager.Add(assetLocation);
                 return RedirectToAction("Index");
             }
 
-            ViewBag.BranchId = new SelectList(db.Branch, "Id", "Name", assetLocation.BranchId);
+            ViewBag.BranchId = new SelectList(_assetLocationManager.GetBranchCategory(), "Id", "Name");
             return View(assetLocation);
         }
 
@@ -69,12 +75,12 @@ namespace AssetTrackingSystem.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AssetLocation assetLocation = db.AssetLocation.Find(id);
+            AssetLocation assetLocation = _assetLocationManager.GetById((long)id);
             if (assetLocation == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.BranchId = new SelectList(db.Branch, "Id", "Name", assetLocation.BranchId);
+            ViewBag.BranchId = new SelectList(_assetLocationManager.GetBranchCategory(), "Id", "Name");
             return View(assetLocation);
         }
 
@@ -87,11 +93,10 @@ namespace AssetTrackingSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(assetLocation).State = EntityState.Modified;
-                db.SaveChanges();
+                _assetLocationManager.Update(assetLocation);
                 return RedirectToAction("Index");
             }
-            ViewBag.BranchId = new SelectList(db.Branch, "Id", "Name", assetLocation.BranchId);
+            ViewBag.BranchId = new SelectList(_assetLocationManager.GetBranchCategory(), "Id", "Name");
             return View(assetLocation);
         }
 
@@ -102,7 +107,7 @@ namespace AssetTrackingSystem.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AssetLocation assetLocation = db.AssetLocation.Find(id);
+            AssetLocation assetLocation = _assetLocationManager.GetById((long)id);
             if (assetLocation == null)
             {
                 return HttpNotFound();
@@ -115,19 +120,10 @@ namespace AssetTrackingSystem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(long id)
         {
-            AssetLocation assetLocation = db.AssetLocation.Find(id);
-            db.AssetLocation.Remove(assetLocation);
-            db.SaveChanges();
+            _assetLocationManager.Remove(id);
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        
     }
 }

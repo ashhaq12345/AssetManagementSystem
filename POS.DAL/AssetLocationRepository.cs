@@ -20,5 +20,10 @@ namespace POS.DAL
         {
 
         }
+        private POSDbContext _db = new POSDbContext();
+        public List<Branch> GetBranchCategory()
+        {
+            return _db.Branch.ToList();
+        }
     }
 }

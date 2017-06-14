@@ -62,5 +62,10 @@ namespace POS.BLL
         {
             throw new NotImplementedException();
         }
+
+        public List<GeneralCategory> GetGeneralCategory()
+        {
+            return _repository.GetGeneralCategory();
+        }
     }
 }

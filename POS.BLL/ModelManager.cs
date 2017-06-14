@@ -62,5 +62,14 @@ namespace POS.BLL
         {
             throw new NotImplementedException();
         }
+
+        public List<Category> GetCategories()
+        {
+            return _repository.GetCategories();
+        }
+        public List<Manufacturer> GetManufacturer()
+        {
+            return _repository.GetManufacturer();
+        }
     }
 }

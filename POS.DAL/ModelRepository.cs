@@ -20,5 +20,16 @@ namespace POS.DAL
         {
 
         }
+
+        private POSDbContext _db = new POSDbContext();
+
+        public List<Category> GetCategories()
+        {
+            return _db.Category.ToList();
+        }
+        public List<Manufacturer> GetManufacturer()
+        {
+            return _db.Manufacturer.ToList();
+        }
     }
 }

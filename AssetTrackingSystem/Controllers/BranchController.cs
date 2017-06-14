@@ -25,7 +25,8 @@ namespace AssetTrackingSystem.Controllers
         // GET: Branch
         public ActionResult Index()
         {
-            return View(_branchManager.GetAll());
+            var branches = _branchManager.GetAll();
+            return View(branches.ToList());
         }
 
         // GET: Branch/Details/5
@@ -46,6 +47,7 @@ namespace AssetTrackingSystem.Controllers
         // GET: Branch/Create
         public ActionResult Create()
         {
+            ViewBag.OrganizationId = new SelectList(_branchManager.GetOrganizationCategories(), "Id", "Name");
             return View();
         }
 
@@ -62,6 +64,7 @@ namespace AssetTrackingSystem.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.OrganizationId = new SelectList(_branchManager.GetOrganizationCategories(), "Id", "Name");
             return View(branch);
         }
 
@@ -77,6 +80,7 @@ namespace AssetTrackingSystem.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.OrganizationId = new SelectList(_branchManager.GetOrganizationCategories(), "Id", "Name");
             return View(branch);
         }
 
@@ -92,6 +96,7 @@ namespace AssetTrackingSystem.Controllers
                 _branchManager.Update(branch);
                 return RedirectToAction("Index");
             }
+            ViewBag.OrganizationId = new SelectList(_branchManager.GetOrganizationCategories(), "Id", "Name");
             return View(branch);
         }
 
@@ -118,5 +123,8 @@ namespace AssetTrackingSystem.Controllers
             _branchManager.Remove(id);
             return RedirectToAction("Index");
         }
+        
+
+        
     }
 }

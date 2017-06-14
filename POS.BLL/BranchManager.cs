@@ -63,5 +63,10 @@ namespace POS.BLL
         {
             throw new NotImplementedException();
         }
+
+        public List<Organization> GetOrganizationCategories()
+        {
+            return _repository.GetOrganizationCategories();
+        }
     }
 }

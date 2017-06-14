@@ -16,11 +16,11 @@ namespace POS.Models
         public long CategoryId { get; set; }
 
         [ForeignKey("CategoryId")]
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
 
         public long ManufacturerId { get; set; }
 
         [ForeignKey("ManufacturerId")]
-        public Manufacturer Manufacturer { get; set; }
+        public virtual Manufacturer Manufacturer { get; set; }
     }
 }

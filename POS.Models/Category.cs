@@ -22,7 +22,7 @@ namespace POS.Models
         public long GeneralCategoryId { get; set; }
 
         [ForeignKey("GeneralCategoryId")]
-        public GeneralCategory GeneralCategory { get; set; }
+        public virtual GeneralCategory GeneralCategory { get; set; }
 
         public List<Model> Models { get; set; }
     }
