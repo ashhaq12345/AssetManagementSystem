@@ -109,9 +109,24 @@
     <Compile Include="AssetLocation.cs" />
     <Compile Include="Branch.cs" />
     <Compile Include="Category.cs" />
+    <Compile Include="Database\POSDbContext.cs" />
     <Compile Include="GeneralCategory.cs" />
+    <Compile Include="Interfaces\IAssetLocationManager.cs" />
+    <Compile Include="Interfaces\IAssetLocationRepository.cs" />
+    <Compile Include="Interfaces\IBranchManager.cs" />
+    <Compile Include="Interfaces\IBranchRepository.cs" />
+    <Compile Include="Interfaces\ICategoryManager.cs" />
+    <Compile Include="Interfaces\ICategoryRepository.cs" />
     <Compile Include="Interfaces\ICommonRepository.cs" />
+    <Compile Include="Interfaces\IGeneralCategoryManager.cs" />
+    <Compile Include="Interfaces\IGeneralCategoryRepository.cs" />
     <Compile Include="Interfaces\IManager.cs" />
+    <Compile Include="Interfaces\IManufacturerManager.cs" />
+    <Compile Include="Interfaces\IManufacturerRepository.cs" />
+    <Compile Include="Interfaces\IModelManager.cs" />
+    <Compile Include="Interfaces\IModelRepository.cs" />
+    <Compile Include="Interfaces\IOrganizationManager.cs" />
+    <Compile Include="Interfaces\IOrganizationRepository.cs" />
     <Compile Include="Manufacturer.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Organization.cs" />
@@ -121,8 +136,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Database\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

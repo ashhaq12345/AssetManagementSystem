@@ -240,3 +240,6 @@ C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem
 C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\AssetTrackingSystem\bin\POS.Models.pdb
 C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\AssetTrackingSystem\bin\POS.Models.dll.config
 C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\AssetTrackingSystem\bin\POS.BLL.dll.config
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\AssetTrackingSystem\bin\POS.DAL.dll
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\AssetTrackingSystem\bin\POS.DAL.pdb
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\AssetTrackingSystem\bin\POS.DAL.dll.config

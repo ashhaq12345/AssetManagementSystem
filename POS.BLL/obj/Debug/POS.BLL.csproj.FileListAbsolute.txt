@@ -10,3 +10,5 @@ C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem
 C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.BLL\obj\Debug\POS.BLL.dll
 C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.BLL\obj\Debug\POS.BLL.pdb
 C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.BLL\bin\Debug\POS.BLL.dll.config
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.BLL\bin\Debug\EntityFramework.dll
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.BLL\bin\Debug\EntityFramework.xml
