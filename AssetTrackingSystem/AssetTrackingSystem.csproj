@@ -185,6 +185,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AssetLocationController.cs" />
+    <Compile Include="Controllers\BranchController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrganizationsController.cs" />
@@ -338,6 +340,16 @@
     <Content Include="Views\Organizations\Details.cshtml" />
     <Content Include="Views\Organizations\Edit.cshtml" />
     <Content Include="Views\Organizations\Index.cshtml" />
+    <Content Include="Views\Branch\Create.cshtml" />
+    <Content Include="Views\Branch\Delete.cshtml" />
+    <Content Include="Views\Branch\Details.cshtml" />
+    <Content Include="Views\Branch\Edit.cshtml" />
+    <Content Include="Views\Branch\Index.cshtml" />
+    <Content Include="Views\AssetLocation\Create.cshtml" />
+    <Content Include="Views\AssetLocation\Delete.cshtml" />
+    <Content Include="Views\AssetLocation\Details.cshtml" />
+    <Content Include="Views\AssetLocation\Edit.cshtml" />
+    <Content Include="Views\AssetLocation\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
