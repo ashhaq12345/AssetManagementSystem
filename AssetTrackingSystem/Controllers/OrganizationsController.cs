@@ -58,7 +58,15 @@ namespace AssetTrackingSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                _organizationManager.Add(organization);
+                try
+                {
+                    _organizationManager.Add(organization);
+                } catch(Exception ex)
+                {
+                    ModelState.AddModelError("ShortName", ex.Message);
+                    return View();
+                }
+                
                 return RedirectToAction("Index");
             }
 
@@ -89,8 +97,16 @@ namespace AssetTrackingSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                _organizationManager.Update(organization);
-                return RedirectToAction("Index");
+                try
+                {
+                    _organizationManager.Update(organization);
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("ShortName", ex.Message);
+                    return View();
+                }
+                
             }
             return View(organization);
         }

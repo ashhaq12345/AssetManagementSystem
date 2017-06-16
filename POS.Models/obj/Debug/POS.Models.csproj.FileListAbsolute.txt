@@ -44,3 +44,8 @@ C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem
 C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.Models\bin\Debug\System.Web.WebPages.xml
 C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.Models\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.Models\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.Models\obj\Debug\POS.Models.Migrations.InitialCreate.resources
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.Models\obj\Debug\POS.Models.csproj.GenerateResource.Cache
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.Models\obj\Debug\POS.Models.Migrations.initial_migration.resources
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.Models\obj\Debug\POS.Models.Migrations.branch_required_field.resources
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.Models\obj\Debug\POS.Models.Migrations.remove_code_from_branch.resources

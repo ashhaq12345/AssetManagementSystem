@@ -20,5 +20,13 @@ namespace POS.DAL
         {
 
         }
+
+        private POSDbContext _db = new POSDbContext();
+
+        public bool IsShortNameUnique(Organization organization)
+        {
+            Organization org = _db.Organization.FirstOrDefault(c => c.ShortName == organization.ShortName);
+            return org == null;
+        }
     }
 }

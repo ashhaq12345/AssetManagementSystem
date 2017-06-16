@@ -8,5 +8,6 @@ namespace POS.Models.Interfaces
 {
     public interface IOrganizationRepository: ICommonRepository<Organization>
     {
+        bool IsShortNameUnique(Organization organization);
     }
 }

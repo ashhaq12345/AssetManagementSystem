@@ -70,16 +70,14 @@
                     </li>
                 </ul>-->
                 <ul class="nav navbar-nav side-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Organization", "Index", "Organizations")</li>
-                    <li>@Html.ActionLink("Branch", "Index", "Branch")</li>
-                    <li>@Html.ActionLink("Asset Location", "Index", "AssetLocation")</li>
-                    <li>@Html.ActionLink("General Category", "Index", "GeneralCategory")</li>
-                    <li>@Html.ActionLink("Category", "Index", "Category")</li>
-                    <li>@Html.ActionLink("Manufacturer", "Index", "Manufacturers")</li>
-                    <li>@Html.ActionLink("Model", "Index", "Model")</li>
+                    <li><a href="@Url.Action("Index", "Home")"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a></li>
+                    <li><a href="@Url.Action("Index", "Organizations")"><i class="fa fa-fw fa-dashboard"></i> Organizations</a></li>
+                    <li><a href="@Url.Action("Index", "Branch")"><i class="fa fa-fw fa-dashboard"></i> Branch</a></li>
+                    <li><a href="@Url.Action("Index", "AssetLocation")"><i class="fa fa-fw fa-dashboard"></i> AssetLocation</a></li>
+                    <li><a href="@Url.Action("Index", "GeneralCategory")"><i class="fa fa-fw fa-dashboard"></i> GeneralCategory</a></li>
+                    <li><a href="@Url.Action("Index", "Category")"><i class="fa fa-fw fa-dashboard"></i> Category</a></li>
+                    <li><a href="@Url.Action("Index", "Manufacturers")"><i class="fa fa-fw fa-dashboard"></i> Manufacturers</a></li>
+                    <li><a href="@Url.Action("Index", "Model")"><i class="fa fa-fw fa-dashboard"></i> Model</a></li>
 
                     @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                     {

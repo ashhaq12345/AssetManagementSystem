@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -11,11 +13,13 @@ namespace POS.Models
     {
         public long Id { get; set; }
 
+        [DisplayName("Branch Name")]
+        [Required]
         public string Name { get; set; }
 
+        [DisplayName("Short Name")]
+        [Required]
         public string ShortName { get; set; }
-
-        public string Code { get; set; }
 
         public string Description { get; set; }
 

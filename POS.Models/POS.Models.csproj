@@ -128,6 +128,23 @@
     <Compile Include="Interfaces\IOrganizationManager.cs" />
     <Compile Include="Interfaces\IOrganizationRepository.cs" />
     <Compile Include="Manufacturer.cs" />
+    <Compile Include="Migrations\201706141937054_InitialCreate.cs" />
+    <Compile Include="Migrations\201706141937054_InitialCreate.Designer.cs">
+      <DependentUpon>201706141937054_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706162043554_initial_migration.cs" />
+    <Compile Include="Migrations\201706162043554_initial_migration.Designer.cs">
+      <DependentUpon>201706162043554_initial_migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706162111288_branch_required_field.cs" />
+    <Compile Include="Migrations\201706162111288_branch_required_field.Designer.cs">
+      <DependentUpon>201706162111288_branch_required_field.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706162145102_remove_code_from_branch.cs" />
+    <Compile Include="Migrations\201706162145102_remove_code_from_branch.Designer.cs">
+      <DependentUpon>201706162145102_remove_code_from_branch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Organization.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,6 +153,19 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706141937054_InitialCreate.resx">
+      <DependentUpon>201706141937054_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706162043554_initial_migration.resx">
+      <DependentUpon>201706162043554_initial_migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706162111288_branch_required_field.resx">
+      <DependentUpon>201706162111288_branch_required_field.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706162145102_remove_code_from_branch.resx">
+      <DependentUpon>201706162145102_remove_code_from_branch.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

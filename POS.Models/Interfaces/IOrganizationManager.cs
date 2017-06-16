@@ -8,6 +8,6 @@ namespace POS.Models.Interfaces
 {
     public interface IOrganizationManager: IManager<Organization>
     {
-        
+        bool IsShortNameUnique(Organization organization);
     }
 }

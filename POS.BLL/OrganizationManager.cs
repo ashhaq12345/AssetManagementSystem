@@ -25,7 +25,12 @@ namespace POS.BLL
 
         public bool Add(Organization entity)
         {
-            return _repository.Add(entity);
+            if(_repository.IsShortNameUnique(entity))
+            {
+                return _repository.Add(entity);
+            }
+            throw new Exception("Short Name is not Unique!");
+
         }
 
         public bool Add(ICollection<Organization> entities)
@@ -43,6 +48,11 @@ namespace POS.BLL
             return _repository.GetById(id);
         }
 
+        public bool IsShortNameUnique(Organization organization)
+        {
+            return _repository.IsShortNameUnique(organization);
+        }
+
         public bool Remove(long id)
         {
             var entity = GetById(id);
@@ -55,7 +65,11 @@ namespace POS.BLL
 
         public bool Update(Organization entity)
         {
-            return _repository.Update(entity);
+            if (_repository.IsShortNameUnique(entity))
+            {
+                return _repository.Update(entity);
+            }
+            throw new Exception("Short Name is not Unique!");
         }
 
         public bool Update(ICollection<Organization> entities)

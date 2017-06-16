@@ -21,9 +21,16 @@ namespace POS.DAL
 
         }
         private POSDbContext _db = new POSDbContext();
+
         public List<Organization> GetOrganizationCategories()
         {
             return _db.Organization.ToList();
+        }
+
+        public bool IsShortNameUnique(Branch branch)
+        {
+            var found = _db.Branch.FirstOrDefault(c => (c.ShortName == branch.ShortName) && (c.OrganizationId == branch.OrganizationId));
+            return found == null;
         }
     }
 }

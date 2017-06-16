@@ -9,5 +9,7 @@ namespace POS.Models.Interfaces
     public interface IBranchRepository: ICommonRepository<Branch>
     {
         List<Organization> GetOrganizationCategories();
+
+        bool IsShortNameUnique(Branch branch);
     }
 }

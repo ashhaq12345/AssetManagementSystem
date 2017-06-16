@@ -16,10 +16,12 @@ namespace AssetTrackingSystem.Controllers
     public class BranchController : Controller
     {
         private IBranchManager _branchManager;
+        private IOrganizationManager _organizationManager;
 
         public BranchController()
         {
             _branchManager = new BranchManager();
+            _organizationManager = new OrganizationManager();
         }
 
         // GET: Branch
@@ -56,15 +58,25 @@ namespace AssetTrackingSystem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,ShortName,Code,Description,BranchCode,OrganizationId")] Branch branch)
+        public ActionResult Create([Bind(Include = "Id,Name,ShortName,Code,Description,BranchCode,OrganizationId,Organization.ShortName")] Branch branch)
         {
             if (ModelState.IsValid)
             {
-                _branchManager.Add(branch);
+                ViewBag.OrganizationId = new SelectList(_branchManager.GetOrganizationCategories(), "Id", "Name");
+                try
+                {
+                    branch.BranchCode = GetOrganizationShortName(branch.OrganizationId) + "_" + branch.ShortName;
+                    _branchManager.Add(branch);
+                } catch(Exception ex)
+                {
+                    ModelState.AddModelError("ShortName", ex.Message);
+                    return View();
+                }
+                
                 return RedirectToAction("Index");
             }
 
-            ViewBag.OrganizationId = new SelectList(_branchManager.GetOrganizationCategories(), "Id", "Name");
+            
             return View(branch);
         }
 
@@ -93,10 +105,20 @@ namespace AssetTrackingSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                _branchManager.Update(branch);
+                ViewBag.OrganizationId = new SelectList(_branchManager.GetOrganizationCategories(), "Id", "Name");
+                try
+                {
+                    branch.BranchCode = GetOrganizationShortName(branch.OrganizationId) + "_" + branch.ShortName;
+                    _branchManager.Update(branch);
+                    return View();
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("ShortName", ex.Message);
+                }
                 return RedirectToAction("Index");
             }
-            ViewBag.OrganizationId = new SelectList(_branchManager.GetOrganizationCategories(), "Id", "Name");
+            
             return View(branch);
         }
 
@@ -124,7 +146,11 @@ namespace AssetTrackingSystem.Controllers
             return RedirectToAction("Index");
         }
         
-
+        public string GetOrganizationShortName(long id)
+        {
+            Organization organization = _organizationManager.GetById((long)id);
+            return organization.ShortName;
+        }
         
     }
 }

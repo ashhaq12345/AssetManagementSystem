@@ -31,7 +31,7 @@ input[type="checkbox"].input-validation-error {
 
 @media (min-width: 768px) {
     .side-nav {
-        top: 100px;
+        top: 60px;
     }
     .navbar-right {
         float: right !important;
