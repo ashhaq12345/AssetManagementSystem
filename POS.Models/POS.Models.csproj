@@ -106,6 +106,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Asset.cs" />
     <Compile Include="AssetLocation.cs" />
     <Compile Include="Branch.cs" />
     <Compile Include="Category.cs" />
@@ -113,6 +114,8 @@
     <Compile Include="GeneralCategory.cs" />
     <Compile Include="Interfaces\IAssetLocationManager.cs" />
     <Compile Include="Interfaces\IAssetLocationRepository.cs" />
+    <Compile Include="Interfaces\IAssetManager.cs" />
+    <Compile Include="Interfaces\IAssetRepository.cs" />
     <Compile Include="Interfaces\IBranchManager.cs" />
     <Compile Include="Interfaces\IBranchRepository.cs" />
     <Compile Include="Interfaces\ICategoryManager.cs" />
@@ -152,6 +155,22 @@
     <Compile Include="Migrations\201706170849550_general_category_required_unique_field.Designer.cs">
       <DependentUpon>201706170849550_general_category_required_unique_field.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706171025485_category_required_unique.cs" />
+    <Compile Include="Migrations\201706171025485_category_required_unique.Designer.cs">
+      <DependentUpon>201706171025485_category_required_unique.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706171045213_manufacturer_required.cs" />
+    <Compile Include="Migrations\201706171045213_manufacturer_required.Designer.cs">
+      <DependentUpon>201706171045213_manufacturer_required.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706171047088_manufacturer_description_field.cs" />
+    <Compile Include="Migrations\201706171047088_manufacturer_description_field.Designer.cs">
+      <DependentUpon>201706171047088_manufacturer_description_field.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706171115350_asset_add.cs" />
+    <Compile Include="Migrations\201706171115350_asset_add.Designer.cs">
+      <DependentUpon>201706171115350_asset_add.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Organization.cs" />
@@ -179,6 +198,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706170849550_general_category_required_unique_field.resx">
       <DependentUpon>201706170849550_general_category_required_unique_field.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706171025485_category_required_unique.resx">
+      <DependentUpon>201706171025485_category_required_unique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706171045213_manufacturer_required.resx">
+      <DependentUpon>201706171045213_manufacturer_required.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706171047088_manufacturer_description_field.resx">
+      <DependentUpon>201706171047088_manufacturer_description_field.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706171115350_asset_add.resx">
+      <DependentUpon>201706171115350_asset_add.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

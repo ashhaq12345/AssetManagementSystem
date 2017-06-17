@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssetLocationManager.cs" />
+    <Compile Include="AssetManager.cs" />
     <Compile Include="BranchManager.cs" />
     <Compile Include="CategoryManager.cs" />
     <Compile Include="GeneralCategoryManager.cs" />

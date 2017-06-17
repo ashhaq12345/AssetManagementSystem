@@ -9,5 +9,7 @@ namespace POS.Models.Interfaces
     public interface ICategoryRepository: ICommonRepository<Category>
     {
         List<GeneralCategory> GetGeneralCategory();
+
+        bool IsShortNameUnique(string shortName);
     }
 }

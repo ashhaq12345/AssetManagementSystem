@@ -16,10 +16,12 @@ namespace AssetTrackingSystem.Controllers
     public class CategoryController : Controller
     {
         private ICategoryManager _categoryManager;
+        private IGeneralCategoryManager _generalCategoryManager;
 
         public CategoryController()
         {
             _categoryManager = new CategoryManager();
+            _generalCategoryManager = new GeneralCategoryManager();
         }
 
         // GET: Category
@@ -60,8 +62,13 @@ namespace AssetTrackingSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                _categoryManager.Add(category);
-                return RedirectToAction("Index");
+                if (_categoryManager.IsShortNameUnique(category.ShortName))
+                {
+                    category.CategoryCode = GetCategoryShortCode(category);
+                    _categoryManager.Add(category);
+                    return RedirectToAction("Index");
+                }
+                ModelState.AddModelError("ShortName", "ShortName Is Not Unique!");
             }
 
             ViewBag.GeneralCategoryId = new SelectList(_categoryManager.GetGeneralCategory(), "Id", "Name");
@@ -93,8 +100,13 @@ namespace AssetTrackingSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                _categoryManager.Update(category);
-                return RedirectToAction("Index");
+                if (_categoryManager.IsShortNameUnique(category.ShortName))
+                {
+                    category.CategoryCode = GetCategoryShortCode(category);
+                    _categoryManager.Update(category);
+                    return RedirectToAction("Index");
+                }
+                ModelState.AddModelError("ShortName", "ShortName Is Not Unique!");
             }
             ViewBag.GeneralCategoryId = new SelectList(_categoryManager.GetGeneralCategory(), "Id", "Name");
             return View(category);
@@ -123,6 +135,12 @@ namespace AssetTrackingSystem.Controllers
             _categoryManager.Remove(id);
             return RedirectToAction("Index");
         }
-        
+
+        public string GetCategoryShortCode(Category category)
+        {
+            GeneralCategory generalCategory = _generalCategoryManager.GetById((long)category.GeneralCategoryId);
+            return generalCategory.ShortName + "_" + category.ShortName;
+        }
+
     }
 }

@@ -54,7 +54,7 @@ namespace AssetTrackingSystem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name")] Manufacturer manufacturer)
+        public ActionResult Create([Bind(Include = "Id,Name,Description")] Manufacturer manufacturer)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace AssetTrackingSystem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name")] Manufacturer manufacturer)
+        public ActionResult Edit([Bind(Include = "Id,Name,Description")] Manufacturer manufacturer)
         {
             if (ModelState.IsValid)
             {

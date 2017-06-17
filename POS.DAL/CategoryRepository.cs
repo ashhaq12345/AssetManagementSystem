@@ -27,5 +27,11 @@ namespace POS.DAL
         {
             return _db.GeneralCategory.ToList();
         }
+
+        public bool IsShortNameUnique(string shortName)
+        {
+            Category category = _db.Category.FirstOrDefault(c => c.ShortName == shortName);
+            return category == null;
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -11,8 +12,12 @@ namespace POS.Models
     {
         public long Id { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
+        [Required]
+        [StringLength(3)]
+        [Index(IsUnique = true)]
         public string ShortName { get; set; }
 
         public string CategoryCode { get; set; }

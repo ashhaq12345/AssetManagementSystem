@@ -20,5 +20,7 @@ namespace POS.Models.Database
         public DbSet<Category> Category { get; set; }
         public DbSet<Manufacturer> Manufacturer { get; set; }
         public DbSet<Model> Model { get; set; }
+
+        public DbSet<Asset> Asset { get; set; }
     }
 }

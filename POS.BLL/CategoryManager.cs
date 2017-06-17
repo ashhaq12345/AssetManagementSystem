@@ -67,5 +67,10 @@ namespace POS.BLL
         {
             return _repository.GetGeneralCategory();
         }
+
+        public bool IsShortNameUnique(string shortName)
+        {
+            return _repository.IsShortNameUnique(shortName);
+        }
     }
 }

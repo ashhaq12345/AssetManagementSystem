@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssetLocationRepository.cs" />
+    <Compile Include="AssetRepository.cs" />
     <Compile Include="BranchRepository.cs" />
     <Compile Include="CategoryRepository.cs" />
     <Compile Include="CommonRepository.cs" />
