@@ -25,5 +25,11 @@ namespace POS.DAL
         {
             return _db.Branch.ToList();
         }
+
+        public bool IsShortNameUnique(string shortName)
+        {
+            AssetLocation al = _db.AssetLocation.FirstOrDefault(c => c.ShortName == shortName);
+            return al == null;
+        }
     }
 }

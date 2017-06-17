@@ -9,5 +9,7 @@ namespace POS.Models.Interfaces
     public interface IAssetLocationManager: IManager<AssetLocation>
     {
         List<Branch> GetBranchCategory();
+
+        bool IsShortNameUnique(string shortName);
     }
 }

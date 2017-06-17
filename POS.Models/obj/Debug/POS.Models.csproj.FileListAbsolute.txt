@@ -49,3 +49,5 @@ C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem
 C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.Models\obj\Debug\POS.Models.Migrations.initial_migration.resources
 C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.Models\obj\Debug\POS.Models.Migrations.branch_required_field.resources
 C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.Models\obj\Debug\POS.Models.Migrations.remove_code_from_branch.resources
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.Models\obj\Debug\POS.Models.Migrations.asset_location_unique.resources
+C:\Users\Ashique\Documents\Visual Studio 2017\Projects\ATS\AssetManagementSystem\POS.Models\obj\Debug\POS.Models.Migrations.general_category_required_unique_field.resources

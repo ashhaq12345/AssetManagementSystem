@@ -81,5 +81,11 @@ namespace POS.BLL
         {
             return _repository.IsShortNameUnique(branch);
         }
+
+        public ICollection<Branch> GetBranchByOrganization(long organizationId)
+        {
+            var branches = _repository.GetAll().AsQueryable().Where(c => c.OrganizationId == organizationId);
+            return branches.ToList();
+        }
     }
 }

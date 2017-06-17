@@ -58,8 +58,13 @@ namespace AssetTrackingSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                _generalCategoryManager.Add(generalCategory);
-                return RedirectToAction("Index");
+               
+                if(_generalCategoryManager.IsShortNameUnique(generalCategory.ShortName))
+                {
+                    _generalCategoryManager.Add(generalCategory);
+                    return RedirectToAction("Index");
+                }
+                ModelState.AddModelError("ShortName", "ShortName Is Not Unique!");
             }
 
             return View(generalCategory);
@@ -89,8 +94,12 @@ namespace AssetTrackingSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                _generalCategoryManager.Update(generalCategory);
-                return RedirectToAction("Index");
+                if (_generalCategoryManager.IsShortNameUnique(generalCategory.ShortName))
+                {
+                    _generalCategoryManager.Update(generalCategory);
+                    return RedirectToAction("Index");
+                }
+                ModelState.AddModelError("ShortName", "ShortName Is Not Unique!");
             }
             return View(generalCategory);
         }

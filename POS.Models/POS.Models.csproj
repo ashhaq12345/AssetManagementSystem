@@ -144,6 +144,14 @@
     <Compile Include="Migrations\201706162145102_remove_code_from_branch.Designer.cs">
       <DependentUpon>201706162145102_remove_code_from_branch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706170837214_asset_location_unique.cs" />
+    <Compile Include="Migrations\201706170837214_asset_location_unique.Designer.cs">
+      <DependentUpon>201706170837214_asset_location_unique.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706170849550_general_category_required_unique_field.cs" />
+    <Compile Include="Migrations\201706170849550_general_category_required_unique_field.Designer.cs">
+      <DependentUpon>201706170849550_general_category_required_unique_field.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Organization.cs" />
@@ -165,6 +173,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706162145102_remove_code_from_branch.resx">
       <DependentUpon>201706162145102_remove_code_from_branch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706170837214_asset_location_unique.resx">
+      <DependentUpon>201706170837214_asset_location_unique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706170849550_general_category_required_unique_field.resx">
+      <DependentUpon>201706170849550_general_category_required_unique_field.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

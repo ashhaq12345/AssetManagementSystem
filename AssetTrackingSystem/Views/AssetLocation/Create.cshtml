@@ -33,17 +33,17 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.LocationCode, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("OrganizationId", "Organization", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.LocationCode, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.LocationCode, "", new { @class = "text-danger" })
+                @Html.DropDownList("OrganizationId", ViewBag.Organization as SelectList, "Select...", htmlAttributes: new { @class = "form-control" })
+
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.BranchId, "BranchId", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("BranchId", "Branch Name", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("BranchId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("BranchId", new SelectList(new List<SelectListItem>()), htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.BranchId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -62,4 +62,5 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/asset_location.js"></script>
 }

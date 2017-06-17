@@ -16,10 +16,14 @@ namespace AssetTrackingSystem.Controllers
     public class AssetLocationController : Controller
     {
         private IAssetLocationManager _assetLocationManager;
+        private IOrganizationManager _organizationManager;
+        private IBranchManager _branchManager;
 
         public AssetLocationController()
         {
             _assetLocationManager = new AssetLocationManager();
+            _organizationManager = new OrganizationManager();
+            _branchManager = new BranchManager();
         }
 
         // GET: AssetLocation
@@ -47,7 +51,7 @@ namespace AssetTrackingSystem.Controllers
         // GET: AssetLocation/Create
         public ActionResult Create()
         {
-            ViewBag.BranchId = new SelectList(_assetLocationManager.GetBranchCategory(), "Id", "Name");
+            ViewBag.Organization = new SelectList(_organizationManager.GetAll(), "Id", "Name");
             return View();
         }
 
@@ -60,11 +64,16 @@ namespace AssetTrackingSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                _assetLocationManager.Add(assetLocation);
-                return RedirectToAction("Index");
+                if(_assetLocationManager.IsShortNameUnique(assetLocation.ShortName))
+                {
+                    assetLocation.LocationCode = GetAssetLocationCode(assetLocation);
+                    _assetLocationManager.Add(assetLocation);
+                    return RedirectToAction("Index");
+                }
+                ModelState.AddModelError("ShortName", "ShortName is not Unique!");
             }
 
-            ViewBag.BranchId = new SelectList(_assetLocationManager.GetBranchCategory(), "Id", "Name");
+            ViewBag.Organization = new SelectList(_organizationManager.GetAll(), "Id", "Name");
             return View(assetLocation);
         }
 
@@ -80,7 +89,7 @@ namespace AssetTrackingSystem.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.BranchId = new SelectList(_assetLocationManager.GetBranchCategory(), "Id", "Name");
+            ViewBag.Organization = new SelectList(_organizationManager.GetAll(), "Id", "Name");
             return View(assetLocation);
         }
 
@@ -93,10 +102,15 @@ namespace AssetTrackingSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                _assetLocationManager.Update(assetLocation);
-                return RedirectToAction("Index");
+                if (_assetLocationManager.IsShortNameUnique(assetLocation.ShortName))
+                {
+                    assetLocation.LocationCode = GetAssetLocationCode(assetLocation);
+                    _assetLocationManager.Update(assetLocation);
+                    return RedirectToAction("Index");
+                }
+                ModelState.AddModelError("ShortName", "ShortName is not Unique!");
             }
-            ViewBag.BranchId = new SelectList(_assetLocationManager.GetBranchCategory(), "Id", "Name");
+            ViewBag.Organization = new SelectList(_organizationManager.GetAll(), "Id", "Name");
             return View(assetLocation);
         }
 
@@ -124,6 +138,12 @@ namespace AssetTrackingSystem.Controllers
             return RedirectToAction("Index");
         }
 
-        
+        public string GetAssetLocationCode(AssetLocation assetLocation)
+        {
+            Branch branch= _branchManager.GetById((long)assetLocation.BranchId);
+            return branch.BranchCode + "_" + assetLocation.ShortName;
+        }
+
+
     }
 }

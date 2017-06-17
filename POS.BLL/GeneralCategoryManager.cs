@@ -62,5 +62,10 @@ namespace POS.BLL
         {
             throw new NotImplementedException();
         }
+
+        public bool IsShortNameUnique(string shortName)
+        {
+            return _repository.IsShortNameUnique(shortName);
+        }
     }
 }

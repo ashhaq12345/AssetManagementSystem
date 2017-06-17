@@ -11,5 +11,7 @@ namespace POS.Models.Interfaces
         List<Organization> GetOrganizationCategories();
 
         bool IsShortNameUnique(Branch branch);
+
+        ICollection<Branch> GetBranchByOrganization(long organizationId);
     }
 }

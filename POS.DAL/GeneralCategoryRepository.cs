@@ -20,5 +20,13 @@ namespace POS.DAL
         {
 
         }
+
+        private POSDbContext _db = new POSDbContext();
+
+        public bool IsShortNameUnique(string shortName)
+        {
+            GeneralCategory gc = _db.GeneralCategory.FirstOrDefault(c => c.ShortName == shortName);
+            return gc == null;
+        }
     }
 }

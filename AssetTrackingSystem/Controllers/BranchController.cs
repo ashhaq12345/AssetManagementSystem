@@ -65,7 +65,7 @@ namespace AssetTrackingSystem.Controllers
                 ViewBag.OrganizationId = new SelectList(_branchManager.GetOrganizationCategories(), "Id", "Name");
                 try
                 {
-                    branch.BranchCode = GetOrganizationShortName(branch.OrganizationId) + "_" + branch.ShortName;
+                    branch.BranchCode = GetOrganizationShortName(branch);
                     _branchManager.Add(branch);
                 } catch(Exception ex)
                 {
@@ -108,7 +108,7 @@ namespace AssetTrackingSystem.Controllers
                 ViewBag.OrganizationId = new SelectList(_branchManager.GetOrganizationCategories(), "Id", "Name");
                 try
                 {
-                    branch.BranchCode = GetOrganizationShortName(branch.OrganizationId) + "_" + branch.ShortName;
+                    branch.BranchCode = GetOrganizationShortName(branch);
                     _branchManager.Update(branch);
                     return View();
                 }
@@ -146,11 +146,18 @@ namespace AssetTrackingSystem.Controllers
             return RedirectToAction("Index");
         }
         
-        public string GetOrganizationShortName(long id)
+        public string GetOrganizationShortName(Branch branch)
         {
-            Organization organization = _organizationManager.GetById((long)id);
-            return organization.ShortName;
+            Organization organization = _organizationManager.GetById((long)branch.OrganizationId);
+            return organization.ShortName + "_" + branch.ShortName;
         }
-        
+
+        public JsonResult GetBranchByOrganization(long organizationId)
+        {
+            var Branches = _branchManager.GetBranchByOrganization(organizationId);
+            var jsonProducts = Branches.Select(c => new { c.Id, c.Name, c.OrganizationId });
+            return Json(jsonProducts, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

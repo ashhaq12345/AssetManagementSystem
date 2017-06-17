@@ -8,5 +8,6 @@ namespace POS.Models.Interfaces
 {
     public interface IGeneralCategoryManager: IManager<GeneralCategory>
     {
+        bool IsShortNameUnique(string shortName);
     }
 }
